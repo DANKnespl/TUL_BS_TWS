@@ -1,0 +1,172 @@
+:root {
+    --primary-900: #0f172a;
+    --primary-800: #1e293b;
+    --secondary: #f1f5f9;
+    --accent: #d875f3;
+    --visited: #DF9DF1;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-900: #f1f5f9;
+        --primary-800: #e2e8f0;
+        --secondary: #1E293B;
+        --accent: #AD0D4D;
+        --visited: #af317f;
+    }
+}
+
+menu li,
+nav li {
+    list-style-type: none;
+}
+
+html {
+    background-color: var(--primary-900);
+    color: var(--secondary);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    counter-reset: nadpis;
+}
+
+header,
+footer,
+menu {
+    justify-content: space-around;
+    background: var(--primary-800);
+}
+
+
+main {
+    align-items: flex-start;
+}
+
+nav>ul>li:first-of-type {
+    border-radius: 10px 10px 0 0;
+}
+
+nav>ul>li:last-of-type {
+    border-radius: 0 0 10px 10px;
+}
+
+nav,
+section {
+    border-radius: 10px;
+}
+
+picture {
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2em;
+    counter-reset: nadpis2 figury;
+}
+
+h2 {
+    font-size: 1.5em;
+    counter-reset: nadpis3;
+}
+
+footer h1,h3 {
+    font-size: 1.25em;
+}
+
+
+main h1::after {
+    counter-increment: nadpis;
+    content: " " counter(nadpis);
+}
+
+main h2::after {
+    counter-increment: nadpis2;
+    content: " " counter(nadpis) "." counter(nadpis2);
+}
+
+main h3::after {
+    counter-increment: nadpis3;
+    content: " " counter(nadpis) "." counter(nadpis2) "." counter(nadpis3);
+}
+
+figcaption {
+    text-align: center;
+}
+
+figcaption::before {
+    counter-increment: figury;
+    content: "Fig " counter(nadpis)"." counter(figury) ": ";
+}
+
+menu {
+    font-size: larger;
+    text-align: center;
+}
+
+nav {
+    font-size: larger;
+    background: var(--primary-800);
+}
+
+table,
+th,
+td {
+    border: 1px solid var(--secondary);
+    text-align: center;
+}
+
+a:link {
+    color: var(--accent);
+    text-decoration: none;
+    transition: 75ms ease-out;
+}
+
+a:visited {
+    color: var(--visited);
+}
+
+menu ul li:hover,
+nav ul li:hover,
+a:hover {
+    background: var(--accent);
+    color: var(--primary-900);
+}
+
+a:active {
+    color: var(--primary-900);
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
+
+a:hover>svg{
+    stroke: var(--primary-900);
+}
+
+
+nav ul li:hover>a {
+    color: var(--primary-900);
+    border-radius: inherit;
+}
+
+.submenu {
+    background: var(--primary-800);
+}
+
+section,form,
+nav {
+    background-color: var(--primary-800);
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+svg {
+    stroke:var(--secondary);
+    stroke-width: 1px;
+    width: 18px;
+    height: 18px;
+}
